@@ -1,0 +1,1264 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../arquitectura/">
+      
+      
+        <link rel="next" href="../crm/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>CEDIS Producto Terminado - SIAC 2.0 Ventas - Documentación Técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ficha-tecnica-unificada-del-modulo-cedis-siac-20-ventas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SIAC 2.0 Ventas - Documentación Técnica" class="md-header__button md-logo" aria-label="SIAC 2.0 Ventas - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SIAC 2.0 Ventas - Documentación Técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CEDIS Producto Terminado
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SIAC 2.0 Ventas - Documentación Técnica" class="md-nav__button md-logo" aria-label="SIAC 2.0 Ventas - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SIAC 2.0 Ventas - Documentación Técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitectura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitectura General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CEDIS Producto Terminado
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    CEDIS Producto Terminado
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-proposito-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Propósito General
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-arquitectura-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Arquitectura General
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Arquitectura General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-estructura-de-archivos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Estructura de Archivos Clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clase-principal-class_cdsphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Clase Principal: class_cds.php
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Clase Principal: class_cds.php">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones Específicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-interaccion-cliente-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Interacción Cliente-Servidor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Interacción Cliente-Servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      AJAX PHP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Base de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-funcionalidades-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Funcionalidades Clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Seguridad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-integraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Integraciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-diagrama-de-flujo-modulo-cedis" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Diagrama de Flujo – Módulo CEDIS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-observaciones-y-mejora-continua" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Observaciones y Mejora Continua
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ventas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ventas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Facturación Electrónica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../liquidacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Liquidación de Ventas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Caja
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reportes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración de Sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-proposito-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Propósito General
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-arquitectura-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Arquitectura General
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Arquitectura General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-estructura-de-archivos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Estructura de Archivos Clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clase-principal-class_cdsphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Clase Principal: class_cds.php
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Clase Principal: class_cds.php">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilidades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funciones-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones Específicas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-interaccion-cliente-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Interacción Cliente-Servidor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Interacción Cliente-Servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajax-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      AJAX PHP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Base de Datos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-funcionalidades-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Funcionalidades Clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Seguridad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-integraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Integraciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-diagrama-de-flujo-modulo-cedis" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Diagrama de Flujo – Módulo CEDIS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-observaciones-y-mejora-continua" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Observaciones y Mejora Continua
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ficha-tecnica-unificada-del-modulo-cedis-siac-20-ventas">Ficha Técnica Unificada del Módulo CEDIS - SIAC 2.0 Ventas</h1>
+<h2 id="1-proposito-general">1. Propósito General</h2>
+<p>El módulo CEDIS (Centro de Distribución) gestiona el inventario de producto terminado en almacenes centrales, incluyendo:</p>
+<ul>
+<li>Entradas por producción o migraciones manuales.</li>
+<li>Salidas por órdenes de salida o traslados.</li>
+<li>Consultas y ajustes de inventario.</li>
+<li>Respaldo de datos mediante archivos JSON y generación de reportes PDF.</li>
+</ul>
+<p>Ubicado en la carpeta <code>ventas/</code>, forma parte del sistema <code>SIAC_2_0_Ventas</code>.</p>
+<h2 id="2-arquitectura-general">2. Arquitectura General</h2>
+<p><strong>Lenguajes y Tecnologías:</strong> </p>
+<ul>
+<li>PHP,</li>
+<li>JavaScript (jQuery),</li>
+<li>HTML/CSS, Bootstrap,</li>
+<li>MySQL,</li>
+<li>AJAX.</li>
+</ul>
+<p><strong>Patrones:</strong> MVC, Singleton (<code>class_wservice.php</code>), Factory (<code>c_View_cds</code>, <code>c_Up_cds</code>).</p>
+<h3 id="frontend">Frontend</h3>
+<ul>
+<li>Interfaz basada en formularios (<code>cds_forms.php</code>).</li>
+<li>Widgets y tablas interactivas (<code>cds_widgets.php</code>, <code>cds_tablas.php</code>).</li>
+<li>Uso de Select2, iCheck, Datepicker (ver <code>cds_forms.php</code>, líneas 384, 1700, 1777).</li>
+</ul>
+<h3 id="backend">Backend</h3>
+<ul>
+<li>Controlador AJAX: <code>cds_ajax.php</code>.</li>
+<li>Clase principal: <code>class_cds.php</code>.</li>
+<li>Conexión a procedimientos almacenados prefijados como <code>sp_cds_*</code>.</li>
+</ul>
+<h2 id="3-estructura-de-archivos-clave">3. Estructura de Archivos Clave</h2>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Funcionalidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cds_ajax.php</code></td>
+<td>Puente AJAX entre frontend y backend, validación.</td>
+</tr>
+<tr>
+<td><code>cds_forms.php</code></td>
+<td>Formularios para entradas, salidas, consultas.</td>
+</tr>
+<tr>
+<td><code>cds_tablas.php</code></td>
+<td>Renderización de tablas HTML.</td>
+</tr>
+<tr>
+<td><code>cds_widgets.php</code></td>
+<td>Visualización de KPIs.</td>
+</tr>
+<tr>
+<td><code>cds_modals.php</code></td>
+<td>Ventanas emergentes.</td>
+</tr>
+<tr>
+<td><code>cds_g_orden_salida.php</code></td>
+<td>Gestión de órdenes de salida.</td>
+</tr>
+<tr>
+<td><code>cds_g_inventarios.php</code></td>
+<td>Vista principal de inventario.</td>
+</tr>
+<tr>
+<td><code>cds_wspace.php</code></td>
+<td>Espacio de trabajo del usuario.</td>
+</tr>
+<tr>
+<td><code>cds_select.php</code></td>
+<td>Carga de datos en selects dinámicos.</td>
+</tr>
+<tr>
+<td><code>view_cds_stk_ent_loc_pt.php</code></td>
+<td>Respaldo de stock desde JSON.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-clase-principal-class_cdsphp">4. Clase Principal: <code>class_cds.php</code></h2>
+<p>Encapsula la lógica de negocio del módulo. Estructura:</p>
+<h3 id="vistas">Vistas</h3>
+<ul>
+<li><code>c_View_cds()</code></li>
+<li><code>cds_view_query_x_scrip()</code></li>
+</ul>
+<h3 id="altas">Altas</h3>
+<ul>
+<li><code>c_Add_cds()</code></li>
+<li><code>cds_add_ginv_stock_mig_tit()</code></li>
+</ul>
+<h3 id="actualizacion">Actualización</h3>
+<ul>
+<li><code>cds_up_av_os_pd_prod_cant_edo_tmp_x_ids()</code></li>
+</ul>
+<h3 id="eliminacion">Eliminación</h3>
+<ul>
+<li><code>cds_rmv_av_os_pd_prod_cont_x_scrip()</code></li>
+</ul>
+<h3 id="utilidades">Utilidades</h3>
+<ul>
+<li><code>cds_mes()</code></li>
+<li><code>cds_genera_color()</code></li>
+<li><code>cds_detecta_dispositivo()</code></li>
+</ul>
+<h3 id="funciones-especificas">Funciones Específicas</h3>
+<p><strong>Entradas:</strong></p>
+<ul>
+<li><code>cds_add_gtex_cedis_ent_pt_tit()</code></li>
+<li><code>cds_add_gept_stock_tit()</code></li>
+</ul>
+<p><strong>Salidas:</strong></p>
+<ul>
+<li><code>cds_add_gos_cedis_os_tit_reg()</code></li>
+<li><code>cds_add_gos_cds_av_os_prod_reg()</code></li>
+</ul>
+<p><strong>Devoluciones:</strong></p>
+<ul>
+<li><code>cds_add_gma_prod_devolver()</code></li>
+<li><code>cds_add_skvw_cedis_noti_aj_prod()</code></li>
+</ul>
+<p><strong>Ajustes de stock:</strong></p>
+<ul>
+<li><code>cds_up_gtex_prod_stk_cant_x_ids()</code></li>
+<li><code>cds_up_gos_cedis_stock_x_ids()</code></li>
+</ul>
+<p><strong>Eliminación:</strong></p>
+<ul>
+<li><code>cds_rmv_os_pa_prod_x_scrip()</code></li>
+</ul>
+<h2 id="5-interaccion-cliente-servidor">5. Interacción Cliente-Servidor</h2>
+<h3 id="javascript">JavaScript</h3>
+<ul>
+<li>Archivos: <code>cds_ajax.js</code>, <code>cds_ajax_1.js</code>.</li>
+<li>Funciones: <code>cds_gcds_os_av_pd_prods_list_view_x_ids()</code>, <code>cds_g_gstk_inicio_graf_view_x_ids()</code>.</li>
+</ul>
+<h3 id="ajax-php">AJAX PHP</h3>
+<ul>
+<li>Archivo: <code>cds_ajax.php</code></li>
+<li>Validación de tokens (línea 1).</li>
+<li>Gestión de escaneo y actualizaciones (líneas 66-180).</li>
+<li>Integración con otros módulos (línea 350+).</li>
+</ul>
+<h2 id="6-base-de-datos">6. Base de Datos</h2>
+<p><strong>Procedimientos Almacenados (SPs):</strong> <code>sp_cds_*</code></p>
+<p><strong>Tablas clave:</strong></p>
+<ul>
+<li><code>inventario_cedis</code></li>
+<li><code>movimientos_cedis</code></li>
+<li><code>orden_salida</code></li>
+<li><code>prodts_pedido_stock_temp</code></li>
+<li><code>productos</code></li>
+</ul>
+<h2 id="7-funcionalidades-clave">7. Funcionalidades Clave</h2>
+<p><strong>Entradas de producto:</strong></p>
+<ul>
+<li>Desde escaneo (<code>cds_forms.php</code>) o migración manual (<code>cds_forms_1.php</code>).</li>
+<li>Flujos definidos en <code>cds_ajax.php</code> (líneas 66-99).</li>
+</ul>
+<p><strong>Salidas:</strong></p>
+<ul>
+<li>Desde <code>cds_g_orden_salida.php</code>.</li>
+<li>Validación de stock (<code>class_cds::get_stock_actual()</code>).</li>
+<li>Reportes PDF (<code>view_cds_av_pd_os.php</code>).</li>
+</ul>
+<p><strong>Consultas de inventario:</strong></p>
+<ul>
+<li>Métodos: <code>get_movimientos()</code>, <code>respaldo_inventario()</code> en <code>class_cds.php</code>.</li>
+<li>Visualización: <code>cds_graficas.php</code>, <code>cds_widgets.php</code>.</li>
+</ul>
+<h2 id="8-seguridad">8. Seguridad</h2>
+<ul>
+<li>Validación de tokens (<code>cds_ajax.php</code>, línea 1).</li>
+<li>Control de roles desde módulo global.</li>
+<li>Sanitización de entradas y uso de <code>POST</code> en formularios.</li>
+</ul>
+<h2 id="9-integraciones">9. Integraciones</h2>
+<ul>
+<li><strong>Módulos internos:</strong> ventas, contabilidad, compras, RH.</li>
+<li><strong>Servicios externos:</strong> facturación electrónica, impresión, notificaciones.</li>
+</ul>
+<h2 id="10-diagrama-de-flujo-modulo-cedis">10. Diagrama de Flujo – Módulo CEDIS</h2>
+<div class="highlight"><pre><span></span><code>graph TD
+    A[Inicio] --&gt; B[Autenticación]
+    B --&gt; C{Menú Principal}
+
+    %% Gestión de Inventario
+    C --&gt; |Inventario| D[Seleccionar Producto]
+    D --&gt; E[Consultar Existencia]
+    E --&gt; F{¿Suficiente Stock?}
+    F --&gt; |Sí| G[Generar Orden de Salida]
+    F --&gt; |No| H[Notificar Falta]
+    G --&gt; I[Actualizar Inventario]
+
+    %% Órdenes de Salida
+    C --&gt; |Órdenes de Salida| J[Crear Orden]
+    J --&gt; K[Agregar Productos]
+    K --&gt; L{¿Código de Barras?}
+    L --&gt; |Sí| M[Escanear]
+    L --&gt; |No| N[Buscar Manualmente]
+    M --&gt; O[Validar Producto]
+    N --&gt; O
+    O --&gt; P[Agregar a Orden]
+    P --&gt; Q{¿Finalizado?}
+    Q --&gt; |No| K
+    Q --&gt; |Sí| R[Confirmar Orden]
+    R --&gt; S[Generar Documentos]
+
+    %% Recepción
+    C --&gt; |Recepción| T[Escanear Producto]
+    T --&gt; U[Validar contra Orden]
+    U --&gt; V{¿Coincide?}
+    V --&gt; |Sí| W[Registrar]
+    V --&gt; |No| X[Notificar Diferencia]
+    W --&gt; Y[Actualizar Inventario]
+
+    %% Reportes
+    C --&gt; |Reportes| Z[Seleccionar Tipo]
+    Z --&gt; AA[Filtrar Parámetros]
+    AA --&gt; AB[Generar Reporte]
+    AB --&gt; AC[Exportar / Imprimir]
+
+    classDef process fill:#e1f5fe,stroke:#01579b,color:#000
+    classDef decision fill:#fff3e0,stroke:#e65100,color:#000
+    classDef startend fill:#c8e6c9,stroke:#2e7d32,color:#000
+
+    class A,AC startend
+    class F,L,Q,V decision
+    class B,C,D,E,G,H,I,J,K,M,N,O,P,R,S,T,U,W,X,Y,Z,AA,AB process
+</code></pre></div>
+<h2 id="11-observaciones-y-mejora-continua">11. Observaciones y Mejora Continua</h2>
+<ul>
+<li>El módulo presenta buena modularidad, con separación clara entre vistas, lógica y base de datos.</li>
+</ul>
+<p><strong>Posibles mejoras:</strong></p>
+<ul>
+<li>Documentación más detallada.</li>
+<li>Implementación de REST API.</li>
+<li>Mejora de experiencia móvil.</li>
+</ul>
+<p><strong>Responsable:</strong> Jair Cipriano<br />
+<strong>Correo:</strong> jcipriano@colpac.com.mx</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
