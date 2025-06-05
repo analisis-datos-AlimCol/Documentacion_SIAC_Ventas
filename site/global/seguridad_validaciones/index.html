@@ -1,0 +1,1245 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../interaccion_cliente_servidor/">
+      
+      
+        <link rel="next" href="../base_datos_global/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Seguridad y Validaciones - SIAC 2.0 Ventas - Documentación Técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#seguridad-y-validaciones-en-siac-20" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SIAC 2.0 Ventas - Documentación Técnica" class="md-header__button md-logo" aria-label="SIAC 2.0 Ventas - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SIAC 2.0 Ventas - Documentación Técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Seguridad y Validaciones
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SIAC 2.0 Ventas - Documentación Técnica" class="md-nav__button md-logo" aria-label="SIAC 2.0 Ventas - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SIAC 2.0 Ventas - Documentación Técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitectura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitectura del Sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Componentes Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estructura_archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructura de Archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaccion_cliente_servidor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interacción Cliente-Servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Seguridad y Validaciones
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad y Validaciones
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-control-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Control de Acceso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Control de Acceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Autorización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-control-multisucursal" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Control Multisucursal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-validacion-de-sesiones-y-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Validación de Sesiones y Tokens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Validación de Sesiones y Tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-validacion-de-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Validación de Sesión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-validacion-por-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Validación por Token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-validaciones-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validaciones de Datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Validaciones de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-validaciones-en-frontend-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Validaciones en Frontend (JavaScript)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-validaciones-en-backend-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Validaciones en Backend (PHP)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-seguridad-en-transporte-y-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Seguridad en Transporte y Almacenamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Seguridad en Transporte y Almacenamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-transporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Transporte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Almacenamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-prevencion-de-amenazas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Prevención de Amenazas Comunes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-buenas-practicas-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Buenas Prácticas de Desarrollo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_datos_global/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base de Datos Global
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fichas Técnicas por Módulo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Fichas Técnicas por Módulo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/caja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Caja
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cedis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CEDIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/crm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Facturación Electrónica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/liquidacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Liquidación de Ventas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/ventas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ventas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integraciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integraciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asincronicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procesos Asincrónicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../errores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manejo de errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimización y performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mantenimiento.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mantenimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APIs y Servicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requisitos.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos técnicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-control-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Control de Acceso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Control de Acceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Autorización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-control-multisucursal" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Control Multisucursal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-validacion-de-sesiones-y-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Validación de Sesiones y Tokens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Validación de Sesiones y Tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-validacion-de-sesion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Validación de Sesión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-validacion-por-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Validación por Token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-validaciones-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validaciones de Datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Validaciones de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-validaciones-en-frontend-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Validaciones en Frontend (JavaScript)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-validaciones-en-backend-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Validaciones en Backend (PHP)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-seguridad-en-transporte-y-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Seguridad en Transporte y Almacenamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Seguridad en Transporte y Almacenamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-transporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Transporte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Almacenamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-prevencion-de-amenazas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Prevención de Amenazas Comunes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-buenas-practicas-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Buenas Prácticas de Desarrollo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="seguridad-y-validaciones-en-siac-20">Seguridad y Validaciones en SIAC 2.0</h1>
+<p>Este documento detalla los mecanismos de control de acceso, validación de datos y protección contra amenazas comunes que se implementan en el sistema SIAC 2.0. Incluye tanto medidas en el cliente como en el servidor, con enfoque en la integridad, confidencialidad y disponibilidad de los datos.</p>
+<hr />
+<h2 id="1-control-de-acceso">1. Control de Acceso</h2>
+<h3 id="11-autenticacion">1.1 Autenticación</h3>
+<ul>
+<li>Basada en sesiones PHP (<code>$_SESSION</code>).</li>
+<li>Login requiere usuario, contraseña y empresa/sucursal.</li>
+<li>Contraseñas almacenadas con hash y validadas en el backend.</li>
+<li>Expiración configurable de sesión por inactividad.</li>
+</ul>
+<h3 id="12-autorizacion">1.2 Autorización</h3>
+<ul>
+<li>Cada usuario tiene un perfil definido por tipo (<code>add_user_tipo</code>).</li>
+<li>Los permisos se asignan por rol en <code>roles_usuar</code> y se vinculan con menús en <code>roles_usuar_menu</code>.</li>
+<li>El acceso a cada módulo se controla en tiempo de ejecución mediante validaciones en scripts AJAX y menús dinámicos.</li>
+</ul>
+<h3 id="13-control-multisucursal">1.3 Control Multisucursal</h3>
+<ul>
+<li>Cada acción verifica el contexto de empresa (<code>ide</code>) y sucursal (<code>ids</code>) activa.</li>
+<li>Se emplean filtros para limitar la visibilidad de datos a usuarios autorizados.</li>
+</ul>
+<hr />
+<h2 id="2-validacion-de-sesiones-y-tokens">2. Validación de Sesiones y Tokens</h2>
+<h3 id="21-validacion-de-sesion">2.1 Validación de Sesión</h3>
+<ul>
+<li>Todos los controladores AJAX inician con verificación de existencia y validez de <code>$_SESSION</code>.</li>
+<li>Si la sesión no está activa, se retorna error y se redirige a login.</li>
+</ul>
+<h3 id="22-validacion-por-token">2.2 Validación por Token</h3>
+<ul>
+<li>Cada solicitud AJAX lleva un <code>token</code> (<code>$_POST['token']</code>), que determina la acción a ejecutar.</li>
+<li>Los scripts como <code>crm_ajax.php</code>, <code>cds_ajax.php</code> emplean <code>switch(token)</code> para controlar el flujo.</li>
+<li>Tokens son únicos por archivo y se documentan en cada módulo.</li>
+<li>Verificaciones adicionales por tipo de usuario y permisos específicos.</li>
+</ul>
+<hr />
+<h2 id="3-validaciones-de-datos">3. Validaciones de Datos</h2>
+<h3 id="31-validaciones-en-frontend-javascript">3.1 Validaciones en Frontend (JavaScript)</h3>
+<ul>
+<li>HTML5: <code>required</code>, <code>pattern</code>, <code>maxlength</code>, <code>min</code>, <code>max</code>.</li>
+<li>Validaciones dinámicas con jQuery para formularios (<code>*.forms.php</code>).</li>
+<li>Plugins: iCheck, Toastr, SweetAlert2 para interacción visual.</li>
+</ul>
+<h3 id="32-validaciones-en-backend-php">3.2 Validaciones en Backend (PHP)</h3>
+<ul>
+<li>Sanitización de datos de entrada: <code>htmlspecialchars()</code>, <code>filter_var()</code>.</li>
+<li>Validación de tipos (<code>is_numeric</code>, <code>is_string</code>, <code>DateTime::createFromFormat</code>).</li>
+<li>Prevención de SQL Injection con consultas preparadas (<code>mysqli</code>, <code>PDO</code>).</li>
+<li>Verificación de integridad lógica: no duplicación, rangos válidos, estado consistente.</li>
+</ul>
+<hr />
+<h2 id="4-seguridad-en-transporte-y-almacenamiento">4. Seguridad en Transporte y Almacenamiento</h2>
+<h3 id="41-transporte">4.1 Transporte</h3>
+<ul>
+<li>Implementación de HTTPS recomendada.</li>
+<li>Uso de <code>$.ajax</code> con método <code>POST</code> para evitar exposición en URL.</li>
+</ul>
+<h3 id="42-almacenamiento">4.2 Almacenamiento</h3>
+<ul>
+<li>Contraseñas con hashing (por ejemplo, <code>bcrypt</code>).</li>
+<li>Control de acceso a archivos por permisos del sistema operativo.</li>
+<li>Archivos de configuración (conexiones, claves) fuera del directorio público.</li>
+</ul>
+<hr />
+<h2 id="5-prevencion-de-amenazas-comunes">5. Prevención de Amenazas Comunes</h2>
+<table>
+<thead>
+<tr>
+<th>Amenaza</th>
+<th>Mecanismo de Prevención</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQL Injection</td>
+<td>Consultas preparadas, validación de entradas</td>
+</tr>
+<tr>
+<td>Cross-Site Scripting (XSS)</td>
+<td><code>htmlspecialchars</code>, <code>strip_tags</code>, validaciones JS</td>
+</tr>
+<tr>
+<td>Session Hijacking</td>
+<td>Regeneración de session ID, expiración de sesiones</td>
+</tr>
+<tr>
+<td>CSRF (Cross-Site Request Forgery)</td>
+<td>Validación de sesión, tokens únicos AJAX</td>
+</tr>
+<tr>
+<td>Fuerza Bruta</td>
+<td>Límite de intentos, captcha (opcional)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-buenas-practicas-de-desarrollo">6. Buenas Prácticas de Desarrollo</h2>
+<ul>
+<li>Validar todos los datos del lado servidor, incluso si ya fueron validados en frontend.</li>
+<li>Documentar y versionar tokens de AJAX.</li>
+<li>Utilizar roles mínimos necesarios para usuarios nuevos.</li>
+<li>Revisar y limpiar sesiones obsoletas periódicamente.</li>
+<li>Nunca confiar en datos del cliente sin validación interna.</li>
+</ul>
+<hr />
+<p>Este documento sirve como referencia para desarrolladores y auditores de seguridad para garantizar que el sistema SIAC 2.0 cumple con buenas prácticas de protección de datos y control de acceso.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

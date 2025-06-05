@@ -50,6 +50,15 @@ Este módulo implementa la arquitectura estándar del sistema SIAC 2.0 definida 
 
 ---
 
+
+### 3.1 Clases CEDIS Producto Terminado
+- [c_View_cds (Vista)](../phpdoc/classc___view__cds.html)
+- [c_Add_cds (Añadir)](../phpdoc/classc___add__cds.html)
+- [c_Up_cds (Actualizar)](../phpdoc/classc___up__cds.html)
+- [c_Rmv_cds (Eliminar)](../phpdoc/classc___rmv__cds.html)
+- [c_Fun_cds (Funciones)](../phpdoc/classc___fun__cds.html)
+- [c_Msj_cds (Mensajes)](../phpdoc/classc___msj__cds.html)
+
 ## 4. Funcionalidades Principales
 
 ### 4.1 Gestor de Órdenes de Salida
@@ -307,37 +316,6 @@ graph TD
     class TX11,TX12,TX13,TX14,TX15,TX21,TX22,TX23,TX24,TX31,TX32,TX33,TX41,TX42,TX43 proceso
 </div>
 
-### 4.5 Seguridad y Control
-
-**Características de seguridad:**
-
-- Validación de sesión: `$_COOKIE['siacventas']`
-- Tokens por operación
-- Validación de permisos
-- Control de acceso
-
-**Características de control:**
-
-- Validación en tiempo real
-- Ajustes automáticos
-- Historial de movimientos
-- Respaldos JSON
-
-### 4.6 Integración y Reportes
-
-**Integración:**
-
-- Con módulo de contabilidad
-- Con departamento de producción
-- Con sistema de pedidos
-
-**Reportes:**
-
-- Generación de PDFs
-- Gráficas dinámicas
-- Exportación de datos
-- Consultas históricas
-
 
 ## 5. Integraciones
 
@@ -435,9 +413,6 @@ Ver estándares completos en [Seguridad y Validaciones](../global/seguridad_vali
 - Tablas de Productos:
     - `add_descuento_prom_prod_his` (historial de descuentos y promociones)
     - `add_stock_ajuste` (ajustes de stock)
-- Tablas de Movimientos:
-    - `add_descuento_prom_prod_his` (historial de descuentos y promociones)
-    - `add_stock_ajuste` (ajustes de stock)
 - Tablas de Agentes de Venta:
     - `add_cc_myr` (agentes de venta y sus permisos)
 - Tablas de CEDIS:
@@ -451,6 +426,25 @@ Ver estándares completos en [Seguridad y Validaciones](../global/seguridad_vali
     - `add_stock_ajuste` (historial de ajustes)
 - Tablas de Configuración:
     - `add_cc_myr` (configuración de agentes y sucursales)
+
+- Tablas de Stock Principal:
+    - add_stock_ajuste - Ajustes de stock
+    - add_mini_stock_vendedor - Stock temporal de vendedores
+    - prodts_pedido_stock - Productos en pedidos de stock
+    - prodts_pedido_stock_temp - Productos en pedidos de stock temporal
+- Tablas de Traslados y Movimientos:
+    - inicia_ruta_stock_vendedor - Rutas de traslado de stock
+    - add_no_salida_stock - Números de salida de stock
+- Tablas de Backup:
+    - stock_backup_titulo - Títulos de backups
+    - stock_backup_productos - Productos en backups
+    - add_backup_stock_almacen - Backups de stock por almacén
+    - add_backup_stock_almacen_prod - Productos en backups de almacén
+- Tablas de Pedidos y Órdenes:
+    - pedido_general_stock - Pedidos generales de stock
+    - ini_rut_stock_rel_t_loc - Relaciones de rutas de stock
+Tablas de Registro de Ajustes:
+    - reg_stock_ajuste - Registro de ajustes de stock
     
 
 

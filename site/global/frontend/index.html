@@ -1,0 +1,2633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../arquitectura/">
+      
+      
+        <link rel="next" href="../estructura_archivos/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Componentes Frontend - SIAC 2.0 Ventas - Documentación Técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ficha-tecnica-frontend-siac-20-ventas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SIAC 2.0 Ventas - Documentación Técnica" class="md-header__button md-logo" aria-label="SIAC 2.0 Ventas - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SIAC 2.0 Ventas - Documentación Técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Componentes Frontend
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SIAC 2.0 Ventas - Documentación Técnica" class="md-nav__button md-logo" aria-label="SIAC 2.0 Ventas - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SIAC 2.0 Ventas - Documentación Técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitectura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitectura del Sistema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Componentes Frontend
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Componentes Frontend
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-estructura-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Estructura General
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Estructura General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-componentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Componentes Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-estructura-de-archivos-y-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Estructura de Archivos y Rutas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-librerias-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Librerías Principales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Librerías Principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-jquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 jQuery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Bootstrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-select2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Select2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-datatables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 DataTables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-sweetalert" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 SweetAlert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-sweetalert2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 SweetAlert2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-icheck" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 iCheck
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-jquery-ui-datepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 jQuery UI Datepicker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-chartjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 Chart.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-prismjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.10 Prism.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211-jquery-vector-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.11 jQuery Vector Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-unslider" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.12 Unslider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-clndrjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.13 CLNDR.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-climacons" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.14 Climacons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-morrisjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.15 Morris.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-datatables-bootstrap-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.16 DataTables Bootstrap Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-bootstrap-datepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.17 Bootstrap Datepicker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-meteocons" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.18 Meteocons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-consideraciones-de-frontend-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Consideraciones de Frontend Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Consideraciones de Frontend Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-diferencias-entre-version-desktop-y-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Diferencias entre Versión Desktop y Móvil
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Diferencias entre Versión Desktop y Móvil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-estructura-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 Estructura de Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-optimizaciones-de-rendimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 Optimizaciones de Rendimiento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-interacciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3 Interacciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-componentes-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Componentes Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Componentes Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-validaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 Validaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-manejo-de-estados" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 Manejo de Estados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-eventos-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 Eventos Globales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-estilos-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.4 Estilos Comunes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-consideraciones-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Consideraciones de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-accesibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Accesibilidad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-patrones-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Patrones de Diseño
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Patrones de Diseño">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Templates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-componentes-reutilizables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Componentes Reutilizables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-sistema-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Sistema de Eventos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-integracion-con-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Integración con Backend
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Integración con Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-manejo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Manejo de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-comunicacion-ajax" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Comunicación AJAX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-estructura-de-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Estructura de Payloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-flujo-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Flujo de Validación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-componentes-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Componentes Personalizados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Componentes Personalizados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-convenciones-de-nombres" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Convenciones de Nombres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-estados-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Estados de Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Inicialización
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-responsividad-y-adaptabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Responsividad y Adaptabilidad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Responsividad y Adaptabilidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-breakpoints-bootstrap-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Breakpoints Bootstrap 4:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-reglas-personalizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Reglas Personalizadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-consideraciones-moviles" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Consideraciones Móviles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-accesibilidad-a11y" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Accesibilidad (a11y)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Accesibilidad (a11y)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-etiquetado-de-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Etiquetado de Formularios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-aria" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 ARIA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-navegacion-por-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Navegación por Teclado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-control-de-versiones-y-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Control de Versiones y Entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Control de Versiones y Entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-gestion-de-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Gestión de Dependencias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Entorno
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estructura_archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructura de Archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaccion_cliente_servidor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interacción Cliente-Servidor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seguridad_validaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seguridad y Validaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base_datos_global/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base de Datos Global
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fichas Técnicas por Módulo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Fichas Técnicas por Módulo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/caja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Caja
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cedis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CEDIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/crm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CRM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Facturación Electrónica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/liquidacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Liquidación de Ventas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/ventas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ventas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integraciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integraciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asincronicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procesos Asincrónicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../errores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manejo de errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimización y performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mantenimiento.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mantenimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apis.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APIs y Servicios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requisitos.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos técnicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-estructura-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Estructura General
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Estructura General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-componentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Componentes Principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-estructura-de-archivos-y-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Estructura de Archivos y Rutas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-librerias-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Librerías Principales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Librerías Principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-jquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 jQuery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Bootstrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-select2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Select2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-datatables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 DataTables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-sweetalert" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 SweetAlert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-sweetalert2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 SweetAlert2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-icheck" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 iCheck
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-jquery-ui-datepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 jQuery UI Datepicker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-chartjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 Chart.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-prismjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.10 Prism.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211-jquery-vector-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.11 jQuery Vector Map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-unslider" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.12 Unslider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-clndrjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.13 CLNDR.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-climacons" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.14 Climacons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-morrisjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.15 Morris.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-datatables-bootstrap-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.16 DataTables Bootstrap Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-bootstrap-datepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.17 Bootstrap Datepicker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-meteocons" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.18 Meteocons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-consideraciones-de-frontend-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Consideraciones de Frontend Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Consideraciones de Frontend Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-diferencias-entre-version-desktop-y-movil" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Diferencias entre Versión Desktop y Móvil
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Diferencias entre Versión Desktop y Móvil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-estructura-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 Estructura de Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-optimizaciones-de-rendimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 Optimizaciones de Rendimiento
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-interacciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.3 Interacciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-componentes-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Componentes Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Componentes Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-validaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 Validaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-manejo-de-estados" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 Manejo de Estados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-eventos-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 Eventos Globales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-estilos-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.4 Estilos Comunes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-consideraciones-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Consideraciones de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-accesibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Accesibilidad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-patrones-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Patrones de Diseño
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Patrones de Diseño">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Templates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-componentes-reutilizables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Componentes Reutilizables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-sistema-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Sistema de Eventos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-integracion-con-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Integración con Backend
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Integración con Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-manejo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Manejo de Datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-comunicacion-ajax" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Comunicación AJAX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-manejo-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Manejo de Errores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-estructura-de-payloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Estructura de Payloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-flujo-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 Flujo de Validación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-componentes-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Componentes Personalizados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Componentes Personalizados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-convenciones-de-nombres" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Convenciones de Nombres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-estados-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Estados de Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Inicialización
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-responsividad-y-adaptabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Responsividad y Adaptabilidad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Responsividad y Adaptabilidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-breakpoints-bootstrap-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Breakpoints Bootstrap 4:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-reglas-personalizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Reglas Personalizadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-consideraciones-moviles" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Consideraciones Móviles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-accesibilidad-a11y" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Accesibilidad (a11y)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Accesibilidad (a11y)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-etiquetado-de-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Etiquetado de Formularios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-aria" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 ARIA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-navegacion-por-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Navegación por Teclado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-control-de-versiones-y-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Control de Versiones y Entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Control de Versiones y Entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-gestion-de-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Gestión de Dependencias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Entorno
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ficha-tecnica-frontend-siac-20-ventas">Ficha Técnica Frontend - SIAC 2.0 Ventas</h1>
+<h2 id="1-estructura-general">1. Estructura General</h2>
+<h3 id="11-componentes-principales">1.1 Componentes Principales</h3>
+<ul>
+<li>
+<p><strong>Formularios (<code>*.forms.php</code>)</strong></p>
+<ul>
+<li>Validaciones  </li>
+<li>Eventos  </li>
+<li>Integración con backend  </li>
+<li>Manejo de estados  </li>
+</ul>
+</li>
+<li>
+<p><strong>Widgets (<code>*.widgets.php</code>)</strong></p>
+<ul>
+<li>Componentes reutilizables  </li>
+<li>Visualización de datos  </li>
+<li>KPIs y estadísticas  </li>
+</ul>
+</li>
+<li>
+<p><strong>Tablas (<code>*.tablas.php</code>)</strong></p>
+<ul>
+<li>Paginación  </li>
+<li>Filtros  </li>
+<li>Ordenamiento  </li>
+<li>Exportación  </li>
+</ul>
+</li>
+<li>
+<p><strong>Selects (<code>*.select.php</code>)</strong></p>
+<ul>
+<li>Búsqueda  </li>
+<li>Autocompletado  </li>
+<li>Carga dinámica  </li>
+</ul>
+</li>
+<li>
+<p><strong>Select2 (<code>*.select2.php</code>)</strong></p>
+<ul>
+<li>Búsqueda avanzada  </li>
+<li>Autocompletado  </li>
+<li>Multi-selección  </li>
+</ul>
+</li>
+<li>
+<p><strong>Modales (<code>*.modals.php</code>)</strong></p>
+<ul>
+<li>Formularios emergentes  </li>
+<li>Mensajes  </li>
+<li>Confirmaciones  </li>
+</ul>
+</li>
+<li>
+<p><strong>AJAX (<code>*.ajax.js</code>)</strong></p>
+<ul>
+<li>Comunicación asincrónica  </li>
+<li>Manejo de eventos  </li>
+<li>Validaciones  </li>
+<li>Actualización dinámica </li>
+</ul>
+</li>
+</ul>
+<h3 id="12-estructura-de-archivos-y-rutas">1.2 Estructura de Archivos y Rutas</h3>
+<div class="highlight"><pre><span></span><code>/frontend/
+├── ajax/                         # Archivos AJAX
+│   ├── ajax_send_txt_info.js    # AJAX para envío de texto
+│   ├── cds_ajax.js              # AJAX para control de CEDIS
+│   ├── cds_ajax_1.js            # AJAX auxiliar CEDIS
+│   ├── conf_ajax.js             # AJAX para configuración
+│   ├── cont_ajax.js             # AJAX para contabilidad
+│   ├── mtz_ajax.js              # AJAX para matriz reportes de presupuesto
+│   ├── pv_ajax.js               # AJAX para punto de venta
+│   ├── pv_ajax_vm.js            # AJAX para vista móvil
+│   ├── rh_ajax.js               # AJAX para recursos humanos
+│   ├── rp_ajax.js               # AJAX para reportes
+│   └── wk_ajax.js               # AJAX para workspace
+│
+├── forms/                        # Formularios
+│   ├── cat_forms.php            # Formularios de catálogos
+│   ├── cds_forms.php            # Formularios de CEDIS
+│   ├── cds_forms_1.php          # Formularios CEDIS
+│   ├── conf_forms.php           # Formularios de configuración
+│   ├── cont_forms.php           # Formularios de contabilidad
+│   ├── crm_forms.php            # Formularios de CRM
+│   ├── mtz_forms.php            # Formularios de matriz reportes
+│   ├── pv_forms.php             # Formularios de punto de venta
+│   ├── rh_forms.php             # Formularios de recursos humanos
+│   ├── rp_forms.php             # Formularios de reportes
+│   └── vta_forms.php            # Formularios de ventas
+│
+├── js/                           # Archivos JavaScript
+│   ├── cds_validations.js       # Validaciones
+│   ├── jquery_jeditable.js      # jQuery editable
+│   └── js_send.js               # Envío de datos
+│
+├── modals/                       # Modales
+│   ├── cat_modals.php           # Modales de catálogos
+│   ├── cds_modals.php           # Modales de CEDIS
+│   ├── conf_modals.php          # Modales de configuración
+│   ├── cont_modals.php          # Modales de contabilidad
+│   ├── crm_modals.php           # Modales de CRM
+│   ├── mtz_modals.php           # Modales de matriz reportes
+│   ├── pv_modals.php            # Modales de punto de venta
+│   ├── pv_modals_vm.php         # Modales de vista móvil
+│   ├── rh_modals.php            # Modales de recursos humanos
+│   └── wk_modals.php            # Modales de workspace
+│
+├── select/                       # Selects
+│   ├── cat_select.php           # Selects de catálogos
+│   ├── cds_select.php           # Selects de CEDIS
+│   ├── conf_select.php          # Selects de configuración
+│   ├── cont_select.php          # Selects de contabilidad
+│   ├── pv_select.php            # Selects de punto de venta
+│   └── vta_select.php           # Selects de ventas
+│
+├── select2/                      # Select2 mejorados
+│   ├── cat_select2.php          # Select2 de catálogos
+│   ├── cds_select2.php          # Select2 de CEDIS
+│   ├── conf_select2.php         # Select2 de configuración
+│   ├── cont_select2.php         # Select2 de contabilidad
+│   ├── crm_select2.php          # Select2 de CRM
+│   ├── mtz_select2.php          # Select2 de matriz reportes
+│   ├── pv_select2.php           # Select2 de punto de venta
+│   └── vta_select2.php          # Select2 de ventas
+│
+├── tablas/                       # Tablas dinámicas
+│   ├── cds_tablas.php           # Tablas de CEDIS
+│   ├── cds_tablas_1.php         # Tablas auxiliares CEDIS
+│   ├── conf_tablas.php          # Tablas de configuración
+│   ├── cont_tablas.php          # Tablas de contabilidad
+│   ├── crm_tablas.php           # Tablas de CRM
+│   ├── mtz_tablas.php           # Tablas de matriz reportes
+│   ├── pv_tablas.php            # Tablas de punto de venta
+│   ├── pv_tablas_vm.php         # Tablas de vista móvil
+│   └── vta_tablas.php           # Tablas de ventas
+│
+├── widgets/                      # Widgets y componentes
+│   ├── cat_widgets.php          # Widgets de catálogos
+│   ├── cds_widgets.php          # Widgets de CEDIS
+│   ├── conf_widgets.php         # Widgets de configuración
+│   ├── cont_widgets.php         # Widgets de contabilidad
+│   ├── crm_widgets.php          # Widgets de CRM
+│   ├── mtz_widgets.php          # Widgets de matriz reportes
+│   ├── pv_widgets.php           # Widgets de punto de venta
+│   ├── pv_widget_vm.php         # Widgets de vista móvil
+│   └── vta_widgets.php          # Widgets de ventas
+│
+├── wspace/                       # Espacios de trabajo
+│   ├── cat_wspace.php           # Espacio de catálogos
+│   ├── cds_wspace.php           # Espacio de CEDIS
+│   ├── cds_wspace_1.php         # Espacio auxiliar CEDIS
+│   ├── conf_wspace.php          # Espacio de configuración
+│   ├── cont_wspace.php          # Espacio de contabilidad
+│   ├── crm_wspace.php           # Espacio de CRM
+│   ├── mtz_wspace.php           # Espacio de matriz reportes
+│   ├── pv_wspace.php            # Espacio de punto de venta
+│   └── wk_workspace.php         # Workspace principal
+│
+├── clases/                       # Clases PHP
+│   ├── class_pv.php             # Clase punto de venta
+│   ├── class_cat.php            # Clase catálogos
+│   ├── class_conf.php           # Clase configuración
+│   ├── class_cont.php           # Clase contabilidad
+│   ├── class_crm.php            # Clase CRM
+│   ├── class_mtz.php            # Clase matriz reportes
+│   ├── class_rh.php             # Clase recursos humanos
+│   └── class_rp.php             # Clase reportes
+│
+├── assets/                       # Recursos estáticos
+│   ├── css/                     # Estilos CSS
+│   │   └── custom.css          # Estilos personalizados
+│   ├── js/                      # JavaScript
+│   │   └── validations.js      # Validaciones
+│   └── images/                  # Imágenes
+│       ├── icons/              # Iconos
+│       └── logos/              # Logos
+│
+└── vendors/                      # Librerías externas
+    ├── bootstrap/               # Bootstrap 4
+    ├── jquery/                  # jQuery 3.x
+    ├── select2/                # Select2 4.x
+    ├── datatables/             # DataTables 1.10.x
+    ├── sweetalert2/            # SweetAlert2 11.x
+    ├── icheck/                 # iCheck
+    ├── datepicker/            # Datepicker
+    └── chart.js/              # Chart.js 2.x
+</code></pre></div>
+<hr />
+<h2 id="2-librerias-principales">2. Librerías Principales</h2>
+<h3 id="21-jquery">2.1 jQuery</h3>
+<ul>
+<li><strong>Versión:</strong> 3.x  </li>
+<li><strong>Documentación:</strong> <a href="https://api.jquery.com/">https://api.jquery.com/</a>  </li>
+<li><strong>Uso Principal:</strong> Manipulación del DOM, eventos, AJAX, animaciones, validaciones  </li>
+</ul>
+<h3 id="22-bootstrap">2.2 Bootstrap</h3>
+<ul>
+<li><strong>Versión:</strong> 4.x  </li>
+<li><strong>Documentación:</strong> <a href="https://getbootstrap.com/docs/4.6/">https://getbootstrap.com/docs/4.6/</a>  </li>
+<li><strong>Uso Principal:</strong> Grid system, componentes UI, formularios, modal, alertas, cards  </li>
+</ul>
+<h3 id="23-select2">2.3 Select2</h3>
+<ul>
+<li><strong>Versión:</strong> 4.x  </li>
+<li><strong>Documentación:</strong> <a href="https://select2.org/">https://select2.org/</a>  </li>
+<li><strong>Uso Principal:</strong> Selects mejorados, búsqueda, autocompletado, multi-selección  </li>
+</ul>
+<h3 id="24-datatables">2.4 DataTables</h3>
+<ul>
+<li><strong>Versión:</strong> 1.10.x  </li>
+<li><strong>Documentación:</strong> <a href="https://datatables.net/">https://datatables.net/</a>  </li>
+<li><strong>Uso Principal:</strong> Tablas dinámicas, paginación, filtros, ordenamiento, exportación  </li>
+</ul>
+<h3 id="25-sweetalert">2.5 SweetAlert</h3>
+<ul>
+<li><strong>Versión:</strong> 1.x  </li>
+<li><strong>Documentación:</strong> <a href="https://lipis.github.io/bootstrap-sweetalert/">https://lipis.github.io/bootstrap-sweetalert/</a>  </li>
+<li><strong>Uso Principal:</strong> Alertas y mensajes de confirmación personalizados  </li>
+</ul>
+<h3 id="26-sweetalert2">2.6 SweetAlert2</h3>
+<ul>
+<li><strong>Versión:</strong> 11.x  </li>
+<li><strong>Documentación:</strong> <a href="https://sweetalert2.github.io/">https://sweetalert2.github.io/</a>  </li>
+<li><strong>Uso Principal:</strong> Notificaciones modernas, alertas interactivas  </li>
+</ul>
+<h3 id="27-icheck">2.7 iCheck</h3>
+<ul>
+<li><strong>Versión:</strong> 1.x  </li>
+<li><strong>Documentación:</strong> <a href="https://fronteed.com/iCheck/">https://fronteed.com/iCheck/</a>  </li>
+<li><strong>Uso Principal:</strong> Checkboxes y radios personalizados, estilos personalizados  </li>
+</ul>
+<h3 id="28-jquery-ui-datepicker">2.8 jQuery UI Datepicker</h3>
+<ul>
+<li><strong>Versión:</strong> 1.x  </li>
+<li><strong>Documentación:</strong> <a href="https://jqueryui.com/datepicker/">https://jqueryui.com/datepicker/</a>  </li>
+<li><strong>Uso Principal:</strong> Selección de fechas, formatos personalizados, validaciones  </li>
+</ul>
+<h3 id="29-chartjs">2.9 Chart.js</h3>
+<ul>
+<li><strong>Versión:</strong> 2.x  </li>
+<li><strong>Documentación:</strong> <a href="https://www.chartjs.org/">https://www.chartjs.org/</a>  </li>
+<li><strong>Uso Principal:</strong> Visualización de datos, KPIs, gráficos estadísticos  </li>
+</ul>
+<h3 id="210-prismjs">2.10 Prism.js</h3>
+<ul>
+<li><strong>Versión:</strong> 1.x  </li>
+<li><strong>Documentación:</strong> <a href="https://prismjs.com/">https://prismjs.com/</a>  </li>
+<li><strong>Uso Principal:</strong> Resaltado de sintaxis en bloques de código  </li>
+</ul>
+<h3 id="211-jquery-vector-map">2.11 jQuery Vector Map</h3>
+<ul>
+<li><strong>Versión:</strong> 2.0.3  </li>
+<li><strong>Documentación:</strong> <a href="https://jvectormap.com/">https://jvectormap.com/</a>  </li>
+<li><strong>Uso Principal:</strong> Mapas interactivos, visualización geográfica de datos  </li>
+</ul>
+<h3 id="212-unslider">2.12 Unslider</h3>
+<ul>
+<li><strong>Versión:</strong> 2.x  </li>
+<li><strong>Documentación:</strong> <a href="https://unslider.com/">https://unslider.com/</a>  </li>
+<li><strong>Uso Principal:</strong> Sliders simples, carruseles de contenido  </li>
+</ul>
+<h3 id="213-clndrjs">2.13 CLNDR.js</h3>
+<ul>
+<li><strong>Versión:</strong> 1.x  </li>
+<li><strong>Documentación:</strong> <a href="https://kylestetz.github.io/CLNDR/">https://kylestetz.github.io/CLNDR/</a>  </li>
+<li><strong>Uso Principal:</strong> Calendarios interactivos, manejo de eventos  </li>
+</ul>
+<h3 id="214-climacons">2.14 Climacons</h3>
+<ul>
+<li><strong>Versión:</strong> -  </li>
+<li><strong>Documentación:</strong> <a href="https://adamwhitcroft.com/climacons/">https://adamwhitcroft.com/climacons/</a>  </li>
+<li><strong>Uso Principal:</strong> Íconos meteorológicos para interfaces  </li>
+</ul>
+<h3 id="215-morrisjs">2.15 Morris.js</h3>
+<ul>
+<li><strong>Versión:</strong> 0.5.x  </li>
+<li><strong>Documentación:</strong> <a href="https://morrisjs.github.io/morris.js/">https://morrisjs.github.io/morris.js/</a>  </li>
+<li><strong>Uso Principal:</strong> Gráficos de líneas, barras y áreas  </li>
+</ul>
+<h3 id="216-datatables-bootstrap-integration">2.16 DataTables Bootstrap Integration</h3>
+<ul>
+<li><strong>Versión:</strong> 1.10+  </li>
+<li><strong>Documentación:</strong> <a href="https://datatables.net/manual/styling/bootstrap4">https://datatables.net/manual/styling/bootstrap4</a>  </li>
+<li><strong>Uso Principal:</strong> Estilización y compatibilidad con Bootstrap  </li>
+</ul>
+<h3 id="217-bootstrap-datepicker">2.17 Bootstrap Datepicker</h3>
+<ul>
+<li><strong>Versión:</strong> 1.x  </li>
+<li><strong>Documentación:</strong> <a href="https://bootstrap-datepicker.readthedocs.io/en/latest/">https://bootstrap-datepicker.readthedocs.io/en/latest/</a>  </li>
+<li><strong>Uso Principal:</strong> Selección de fechas con soporte Bootstrap  </li>
+</ul>
+<h3 id="218-meteocons">2.18 Meteocons</h3>
+<ul>
+<li><strong>Versión:</strong> -  </li>
+<li><strong>Documentación:</strong> <a href="https://www.alessioatzeni.com/meteocons/">https://www.alessioatzeni.com/meteocons/</a>  </li>
+<li><strong>Uso Principal:</strong> Íconos meteorológicos estilo flat  </li>
+</ul>
+<h2 id="3-consideraciones-de-frontend-comunes">3. Consideraciones de Frontend Comunes</h2>
+<h3 id="31-diferencias-entre-version-desktop-y-movil">3.1 Diferencias entre Versión Desktop y Móvil</h3>
+<h4 id="311-estructura-de-componentes">3.1.1 Estructura de Componentes</h4>
+<ul>
+<li>
+<p><strong>Formularios</strong></p>
+<ul>
+<li>Desktop: Layout en columnas con campos agrupados</li>
+<li>Móvil: Layout vertical con campos en una sola columna</li>
+<li>Uso de <code>form-group</code> de Bootstrap para ambos casos</li>
+</ul>
+</li>
+<li>
+<p><strong>Tablas</strong></p>
+<ul>
+<li>Desktop: Tablas completas con todas las columnas visibles</li>
+<li>Móvil: Tablas responsivas con columnas ocultas y botón de detalles</li>
+<li>Implementación de <code>dataTables</code> con configuración específica para móvil</li>
+</ul>
+</li>
+<li>
+<p><strong>Selects y Select2</strong></p>
+<ul>
+<li>Desktop: Select2 con búsqueda y multi-selección</li>
+<li>Móvil: Select2 con menú desplegable optimizado</li>
+<li>Uso de <code>select2-container--mobile</code> para estilos específicos</li>
+</ul>
+</li>
+<li>
+<p><strong>Modales</strong></p>
+<ul>
+<li>Desktop: Modales con tamaño fijo y scroll interno</li>
+<li>Móvil: Modales full-screen con scroll de la página</li>
+<li>Implementación de <code>modal-dialog-scrollable</code> para móvil</li>
+</ul>
+</li>
+</ul>
+<h4 id="312-optimizaciones-de-rendimiento">3.1.2 Optimizaciones de Rendimiento</h4>
+<ul>
+<li>Carga diferida de imágenes en móvil</li>
+<li>Reducción de elementos DOM en móvil</li>
+<li>Optimización de AJAX para móvil (menos datos)</li>
+<li>Implementación de <code>lazy-loading</code> en tablas</li>
+</ul>
+<h4 id="313-interacciones">3.1.3 Interacciones</h4>
+<ul>
+<li>Desktop: Uso de hover y tooltips</li>
+<li>Móvil: Uso de touch y gestos</li>
+<li>Adaptación de eventos (click vs touch)</li>
+<li>Implementación de <code>touch-action</code> para mejor rendimiento</li>
+</ul>
+<h3 id="32-componentes-comunes">3.2 Componentes Comunes</h3>
+<h4 id="321-validaciones">3.2.1 Validaciones</h4>
+<ul>
+<li>Validaciones en tiempo real</li>
+<li>Mensajes de error consistentes</li>
+<li>Uso de <code>jQuery.validate()</code></li>
+<li>Implementación de <code>data-validation</code> para personalización</li>
+</ul>
+<h4 id="322-manejo-de-estados">3.2.2 Manejo de Estados</h4>
+<ul>
+<li>Estado de carga (loading)</li>
+<li>Estado de error</li>
+<li>Estado de éxito</li>
+<li>Implementación de <code>state-manager.js</code></li>
+</ul>
+<h4 id="323-eventos-globales">3.2.3 Eventos Globales</h4>
+<ul>
+<li>Eventos personalizados</li>
+<li>Sistema de notificaciones</li>
+<li>Manejo de sesiones</li>
+<li>Implementación de <code>event-bus.js</code></li>
+</ul>
+<h4 id="324-estilos-comunes">3.2.4 Estilos Comunes</h4>
+<ul>
+<li>Variables CSS compartidas</li>
+<li>Mixins y componentes reutilizables</li>
+<li>Sistema de colores consistente</li>
+<li>Implementación de <code>custom.scss</code></li>
+</ul>
+<h3 id="33-consideraciones-de-seguridad">3.3 Consideraciones de Seguridad</h3>
+<ul>
+<li>Validación de entrada</li>
+<li>Protección contra XSS</li>
+<li>Manejo seguro de datos sensibles</li>
+<li>Implementación de <code>security.js</code></li>
+</ul>
+<h3 id="34-accesibilidad">3.4 Accesibilidad</h3>
+<ul>
+<li>Etiquetas ARIA</li>
+<li>Soporte para lectores de pantalla</li>
+<li>Contraste adecuado</li>
+<li>Implementación de <code>accessibility.js</code><ul>
+<li>Gráficos estadísticos  </li>
+<li>Visualización de datos  </li>
+<li>KPIs  </li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="3-patrones-de-diseno">3. Patrones de Diseño</h2>
+<h3 id="31-templates">3.1 Templates</h3>
+<ul>
+<li>Estructura común para formularios  </li>
+<li>Componentes reutilizables  </li>
+<li>Sistema de eventos  </li>
+<li>Manejo de estados  </li>
+</ul>
+<h3 id="32-componentes-reutilizables">3.2 Componentes Reutilizables</h3>
+<ul>
+<li>Formularios base  </li>
+<li>Tablas dinámicas  </li>
+<li>Selects con búsqueda  </li>
+<li>Modales  </li>
+<li>Widgets estadísticos  </li>
+</ul>
+<h3 id="33-sistema-de-eventos">3.3 Sistema de Eventos</h3>
+<ul>
+<li>AJAX requests  </li>
+<li>Validaciones  </li>
+<li>Manejo de errores  </li>
+<li>Actualización dinámica  </li>
+</ul>
+<hr />
+<h2 id="4-integracion-con-backend">4. Integración con Backend</h2>
+<h3 id="41-manejo-de-datos">4.1 Manejo de Datos</h3>
+<ul>
+<li>Formateo  </li>
+<li>Validación  </li>
+<li>Exportación  </li>
+<li>Importación  </li>
+</ul>
+<h3 id="42-comunicacion-ajax">4.2 Comunicación AJAX</h3>
+<ul>
+<li>Tokens  </li>
+<li>Validación de sesión  </li>
+<li>Manejo de errores  </li>
+<li>Carga asíncrona  </li>
+<li><strong>Método:</strong> POST  </li>
+<li><strong>Formato:</strong> JSON  </li>
+</ul>
+<p><strong>Ejemplo de petición:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pv_ajax.php&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">anf</span><span class="o">:</span><span class="w"> </span><span class="nx">año</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">eidf</span><span class="o">:</span><span class="w"> </span><span class="nx">id_empresa</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">sidf</span><span class="o">:</span><span class="w"> </span><span class="nx">id_sucursal</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// ... otros parámetros</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="w">    </span><span class="nx">contentType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Manejo de respuesta</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Manejo de errores</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="43-manejo-de-errores">4.3 Manejo de Errores</h3>
+<p><strong>Status HTTP:</strong></p>
+<ul>
+<li><code>200</code>: Éxito  </li>
+<li><code>400</code>: Error de validación  </li>
+<li><code>401</code>: Sesión expirada  </li>
+<li><code>500</code>: Error del servidor  </li>
+</ul>
+<p><strong>Estructura de errores:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Error de validación&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;errors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;campo1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Error en campo 1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;campo2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Error en campo 2&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="44-estructura-de-payloads">4.4 Estructura de Payloads</h3>
+<p><strong>Petición:</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="nx">CopyInsert</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pv_gv_av_os_doc_unlock_send_x_ids&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;params&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;anf&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">año</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;eidf&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">id_empresa</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;sidf&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">id_sucursal</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// ... otros parámetros</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Respuesta:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">CopyInsert</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;status&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;success/error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;data&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// datos de respuesta</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mensaje de éxito/error&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="45-flujo-de-validacion">4.5 Flujo de Validación</h3>
+<ul>
+<li>Validación de sesión</li>
+<li>Validación de permisos</li>
+<li>Validación de datos</li>
+<li>Procesamiento del negocio</li>
+<li>Respuesta al cliente</li>
+</ul>
+<h2 id="5-componentes-personalizados">5. Componentes Personalizados</h2>
+<h3 id="51-convenciones-de-nombres">5.1 Convenciones de Nombres</h3>
+<p><strong>Prefijos:</strong></p>
+<ul>
+<li>f_: Formularios</li>
+<li>sl_: Selects</li>
+<li>txt_: Textos</li>
+<li>btn_: Botones</li>
+<li>ck_: Checkboxes</li>
+<li>rd_: Radios</li>
+</ul>
+<p><strong>Clases:</strong></p>
+<ul>
+<li>form-control: Campos de entrada</li>
+<li>slmun: Select múltiple</li>
+<li>minimal: Estilo minimalista</li>
+<li>icheckbox_minimal-blue: Checkbox</li>
+<li>iradio_minimal-blue: Radio</li>
+</ul>
+<h3 id="52-estados-de-componentes">5.2 Estados de Componentes</h3>
+<ul>
+<li>Activo: iCheck('enable')</li>
+<li>Deshabilitado: iCheck('disable')</li>
+<li>Validado: class="has-success"</li>
+<li>Error: class="has-error"</li>
+</ul>
+<h3 id="53-inicializacion">5.3 Inicialización</h3>
+<div class="highlight"><pre><span></span><code><span class="nx">CopyInsert</span>
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Inicialización de iCheck</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[type=&quot;checkbox&quot;].minimal, input[type=&quot;radio&quot;].minimal&#39;</span><span class="p">).</span><span class="nx">iCheck</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">checkboxClass</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;icheckbox_minimal-blue&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">radioClass</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;iradio_minimal-blue&#39;</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Inicialización de Select2</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.select2&#39;</span><span class="p">).</span><span class="nx">select2</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">placeholder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Selecciona&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowClear</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="6-responsividad-y-adaptabilidad">6. Responsividad y Adaptabilidad</h2>
+<h3 id="61-breakpoints-bootstrap-4">6.1 Breakpoints Bootstrap 4:</h3>
+<ul>
+<li>xs: &lt;576px</li>
+<li>sm: ≥576px</li>
+<li>md: ≥768px</li>
+<li>lg: ≥992px</li>
+<li>xl: ≥1200px</li>
+</ul>
+<h3 id="62-reglas-personalizadas">6.2 Reglas Personalizadas</h3>
+<p><strong>Grid personalizado:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">CopyInsert</span>
+<span class="p">.</span><span class="nc">col-xl-10</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">83.333333</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mf">83.333333</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="63-consideraciones-moviles">6.3 Consideraciones Móviles</h3>
+<ul>
+<li>Formularios adaptativos</li>
+<li>Menús responsivos</li>
+<li>Tablas scrollables</li>
+<li>Botones grandes para touch</li>
+</ul>
+<h2 id="7-accesibilidad-a11y">7. Accesibilidad (a11y)</h2>
+<h3 id="71-etiquetado-de-formularios">7.1 Etiquetado de Formularios</h3>
+<div class="highlight"><pre><span></span><code>CopyInsert
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;txtconm&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-bold-700&quot;</span><span class="p">&gt;</span>CONTACTO<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group-prepend&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group-text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;basic-addon3&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fa fa-asterisk&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;txtconm&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;txtconm&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="72-aria">7.2 ARIA</h3>
+<ul>
+<li>aria-label: Etiquetas descriptivas</li>
+<li>aria-describedby: Descripciones adicionales</li>
+<li>aria-expanded: Estados de elementos</li>
+<li>aria-hidden: Elementos ocultos</li>
+</ul>
+<h3 id="73-navegacion-por-teclado">7.3 Navegación por Teclado</h3>
+<ul>
+<li>Focus visible</li>
+<li>Tab index</li>
+<li>Role attributes</li>
+</ul>
+<h2 id="8-control-de-versiones-y-entorno">8. Control de Versiones y Entorno</h2>
+<h3 id="81-gestion-de-dependencias">8.1 Gestión de Dependencias</h3>
+<ul>
+<li>jQuery: Versión 3.x</li>
+<li>Bootstrap: Versión 4.x</li>
+<li>Select2: Versión 4.x</li>
+<li>DataTables: Versión 1.10.x</li>
+<li>SweetAlert2: Versión 11.x</li>
+</ul>
+<h3 id="82-entorno">8.2 Entorno</h3>
+<p>Navegadores soportados:</p>
+<ul>
+<li>Chrome (última versión)</li>
+<li>Firefox (última versión)</li>
+<li>Edge (última versión)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

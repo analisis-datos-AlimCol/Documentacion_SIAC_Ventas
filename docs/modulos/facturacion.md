@@ -36,7 +36,17 @@ Este módulo implementa la arquitectura estándar del sistema SIAC 2.0 definida 
 | `view_cfdi_ticket.php` | Tickets electrónicos             |
 | `cont_ajax.js`| Generación de facturas |
 | `ajax_send_txt_info.js`|  Envío de información TXT | 
----
+
+
+**Clases Principales**
+
+- [Facturación Electrónica](../phpdoc/class_facturacion_moderna.html)
+- [c_View_cont (Vista Contabilidad)](../phpdoc/classc___view__cont.html)
+- [c_Add_cont (Añadir Facturas)](../phpdoc/classc___add__cont.html)
+- [c_Up_cont (Actualizar Facturas)](../phpdoc/classc___up__cont.html)
+- [c_Rmv_cont (Eliminar Facturas)](../phpdoc/classc___rmv__cont.html)
+- [c_Fun_cont (Funciones Contabilidad)](../phpdoc/classc___fun__cont.html)
+- [c_Msj_cont (Mensajes Contabilidad)](../phpdoc/classc___msj__cont.html)
 
 ## 4. Funcionalidades Principales
 

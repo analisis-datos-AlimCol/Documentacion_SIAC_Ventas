@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../estructura_archivos/" rel="prev"/>
+<link href="../seguridad_validaciones/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
+<title>Interacción Cliente-Servidor - SIAC 2.0 Ventas - Documentación Técnica</title>
+<link href="../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#interaccion-cliente-servidor-en-siac-20">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="SIAC 2.0 Ventas - Documentación Técnica" class="md-header__button md-logo" data-md-component="logo" href="../.." title="SIAC 2.0 Ventas - Documentación Técnica">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            SIAC 2.0 Ventas - Documentación Técnica
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Interacción Cliente-Servidor
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="SIAC 2.0 Ventas - Documentación Técnica" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="SIAC 2.0 Ventas - Documentación Técnica">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    SIAC 2.0 Ventas - Documentación Técnica
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Introducción
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../arquitectura/">
+<span class="md-ellipsis">
+    Arquitectura del Sistema
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../frontend/">
+<span class="md-ellipsis">
+    Componentes Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../estructura_archivos/">
+<span class="md-ellipsis">
+    Estructura de Archivos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Interacción Cliente-Servidor
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Interacción Cliente-Servidor
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-modelo-de-comunicacion-asincrona">
+<span class="md-ellipsis">
+      1. Modelo de Comunicación Asíncrona
+    </span>
+</a>
+<nav aria-label="1. Modelo de Comunicación Asíncrona" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-flujo-general">
+<span class="md-ellipsis">
+      1.1 Flujo General
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-componentes-clave">
+<span class="md-ellipsis">
+      2. Componentes Clave
+    </span>
+</a>
+<nav aria-label="2. Componentes Clave" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-javascript-frontend-ajaxjs">
+<span class="md-ellipsis">
+      2.1 JavaScript Frontend (*.ajax.js)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-controlador-ajax-php-ajaxphp">
+<span class="md-ellipsis">
+      2.2 Controlador AJAX PHP (*.ajax.php)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-clases-de-negocio-class_php">
+<span class="md-ellipsis">
+      2.3 Clases de Negocio (class_*.php)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-token-based-routing">
+<span class="md-ellipsis">
+      3. Token-Based Routing
+    </span>
+</a>
+<nav aria-label="3. Token-Based Routing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-ejemplo">
+<span class="md-ellipsis">
+      3.1 Ejemplo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-convenciones">
+<span class="md-ellipsis">
+      3.2 Convenciones
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-validaciones-en-el-ciclo-de-comunicacion">
+<span class="md-ellipsis">
+      4. Validaciones en el Ciclo de Comunicación
+    </span>
+</a>
+<nav aria-label="4. Validaciones en el Ciclo de Comunicación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-en-el-cliente">
+<span class="md-ellipsis">
+      4.1 En el Cliente
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-en-el-servidor">
+<span class="md-ellipsis">
+      4.2 En el Servidor
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-manejo-de-respuestas">
+<span class="md-ellipsis">
+      5. Manejo de Respuestas
+    </span>
+</a>
+<nav aria-label="5. Manejo de Respuestas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-json">
+<span class="md-ellipsis">
+      Ejemplo JSON
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-seguridad-en-la-interaccion">
+<span class="md-ellipsis">
+      6. Seguridad en la Interacción
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../seguridad_validaciones/">
+<span class="md-ellipsis">
+    Seguridad y Validaciones
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../base_datos_global/">
+<span class="md-ellipsis">
+    Base de Datos Global
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Fichas Técnicas por Módulo
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Fichas Técnicas por Módulo
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modulos/caja/">
+<span class="md-ellipsis">
+    Caja
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modulos/cedis/">
+<span class="md-ellipsis">
+    CEDIS
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modulos/crm/">
+<span class="md-ellipsis">
+    CRM
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modulos/facturacion/">
+<span class="md-ellipsis">
+    Facturación Electrónica
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modulos/liquidacion/">
+<span class="md-ellipsis">
+    Liquidación de Ventas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modulos/ventas/">
+<span class="md-ellipsis">
+    Ventas
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../integraciones/">
+<span class="md-ellipsis">
+    Integraciones
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../asincronicos/">
+<span class="md-ellipsis">
+    Procesos Asincrónicos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../errores/">
+<span class="md-ellipsis">
+    Manejo de errores
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../performance/">
+<span class="md-ellipsis">
+    Optimización y performance
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mantenimiento.md">
+<span class="md-ellipsis">
+    Mantenimiento
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../apis.md">
+<span class="md-ellipsis">
+    APIs y Servicios
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../requisitos.md">
+<span class="md-ellipsis">
+    Requisitos técnicos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-modelo-de-comunicacion-asincrona">
+<span class="md-ellipsis">
+      1. Modelo de Comunicación Asíncrona
+    </span>
+</a>
+<nav aria-label="1. Modelo de Comunicación Asíncrona" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-flujo-general">
+<span class="md-ellipsis">
+      1.1 Flujo General
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-componentes-clave">
+<span class="md-ellipsis">
+      2. Componentes Clave
+    </span>
+</a>
+<nav aria-label="2. Componentes Clave" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-javascript-frontend-ajaxjs">
+<span class="md-ellipsis">
+      2.1 JavaScript Frontend (*.ajax.js)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-controlador-ajax-php-ajaxphp">
+<span class="md-ellipsis">
+      2.2 Controlador AJAX PHP (*.ajax.php)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-clases-de-negocio-class_php">
+<span class="md-ellipsis">
+      2.3 Clases de Negocio (class_*.php)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-token-based-routing">
+<span class="md-ellipsis">
+      3. Token-Based Routing
+    </span>
+</a>
+<nav aria-label="3. Token-Based Routing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-ejemplo">
+<span class="md-ellipsis">
+      3.1 Ejemplo
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-convenciones">
+<span class="md-ellipsis">
+      3.2 Convenciones
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-validaciones-en-el-ciclo-de-comunicacion">
+<span class="md-ellipsis">
+      4. Validaciones en el Ciclo de Comunicación
+    </span>
+</a>
+<nav aria-label="4. Validaciones en el Ciclo de Comunicación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-en-el-cliente">
+<span class="md-ellipsis">
+      4.1 En el Cliente
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-en-el-servidor">
+<span class="md-ellipsis">
+      4.2 En el Servidor
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-manejo-de-respuestas">
+<span class="md-ellipsis">
+      5. Manejo de Respuestas
+    </span>
+</a>
+<nav aria-label="5. Manejo de Respuestas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-json">
+<span class="md-ellipsis">
+      Ejemplo JSON
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-seguridad-en-la-interaccion">
+<span class="md-ellipsis">
+      6. Seguridad en la Interacción
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="interaccion-cliente-servidor-en-siac-20">Interacción Cliente-Servidor en SIAC 2.0</h1>
+<p>Este documento detalla cómo se comunican las capas frontend y backend del sistema SIAC 2.0, centrándose en el flujo de información, validaciones, uso de AJAX y el manejo de tokens como controladores de lógica de negocio.</p>
+<hr/>
+<h2 id="1-modelo-de-comunicacion-asincrona">1. Modelo de Comunicación Asíncrona</h2>
+<p>El sistema SIAC 2.0 está diseñado para operar de forma altamente interactiva mediante <strong>AJAX</strong>. Esto permite que la interfaz de usuario se actualice sin recargar toda la página, proporcionando una experiencia fluida y eficiente.</p>
+<h3 id="11-flujo-general">1.1 Flujo General</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant Usuario
+    participant Navegador
+    participant JSFrontend as JavaScript Frontend
+    participant AJAXPHP as AJAX PHP Controller
+    participant Backend as Clase PHP
+    participant DB as Base de Datos
+
+    Usuario-&gt;&gt;Navegador: Interacción (clic, cambio, submit)
+    Navegador-&gt;&gt;JSFrontend: Captura evento
+    JSFrontend-&gt;&gt;AJAXPHP: Envío vía POST con token
+    AJAXPHP-&gt;&gt;Backend: Validación de token y lógica
+    Backend-&gt;&gt;DB: Acceso a datos
+    DB--&gt;&gt;Backend: Resultado de la consulta
+    Backend--&gt;&gt;AJAXPHP: Resultado procesado
+    AJAXPHP--&gt;&gt;JSFrontend: Respuesta JSON o HTML
+    JSFrontend--&gt;&gt;Navegador: Actualización de UI
+</div>
+<h2 id="2-componentes-clave">2. Componentes Clave</h2>
+<h3 id="21-javascript-frontend-ajaxjs">2.1 JavaScript Frontend (<code>*.ajax.js</code>)</h3>
+<ul>
+<li>Capta eventos (por ejemplo, <code>onClick</code>, <code>onSubmit</code>).</li>
+<li>Realiza peticiones <code>$.ajax()</code> con <code>type: "POST"</code>, <code>dataType: "json"</code> o <code>"html"</code>.</li>
+<li>Usa <strong>token</strong> como selector lógico que determina la acción que ejecutará el backend.</li>
+<li>Maneja <code>success</code>, <code>error</code> y <code>complete</code> para:</li>
+<li>Actualizar la UI.</li>
+<li>Mostrar mensajes (Toastr, SweetAlert2).</li>
+<li>Redirigir.</li>
+</ul>
+<h3 id="22-controlador-ajax-php-ajaxphp">2.2 Controlador AJAX PHP (<code>*.ajax.php</code>)</h3>
+<ul>
+<li>Cada archivo contiene una estructura <code>switch ($_POST['token']) { ... }</code>.</li>
+<li>Se validan los datos de entrada y la sesión de usuario.</li>
+<li>Se llaman métodos de clases específicas según el módulo (por ejemplo, <code>class_crm</code>, <code>class_cds</code>).</li>
+<li>Retornan arrays codificados en JSON o bloques HTML directamente para insertar en el DOM.</li>
+</ul>
+<h3 id="23-clases-de-negocio-class_php">2.3 Clases de Negocio (<code>class_*.php</code>)</h3>
+<ul>
+<li>Contienen métodos públicos para manejar operaciones de negocio:</li>
+<li>Inserciones.</li>
+<li>Consultas.</li>
+<li>Actualizaciones.</li>
+<li>Validaciones.</li>
+<li>Utilizan conexiones MySQL mediante <strong>PDO</strong> o <strong>mysqli</strong>, con protección contra inyecciones SQL.</li>
+<li>Algunos métodos incluyen lógica de auditoría, control de errores y logs.</li>
+</ul>
+<h2 id="3-token-based-routing">3. Token-Based Routing</h2>
+<p>Cada acción se identifica mediante un número entero llamado <strong>token</strong>, enviado desde el frontend.</p>
+<h3 id="31-ejemplo">3.1 Ejemplo</h3>
+<p><div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">"crm_ajax.php"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="mf">14</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">idcliente</span><span class="o">:</span><span class="w"> </span><span class="mf">1283</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s1">'nuevo@cliente.com'</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// procesar respuesta</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="x">// En crm_ajax.php</span>
+<span class="x">switch ($_POST['token']) {</span>
+<span class="x">    case 14:</span>
+<span class="x">        $crm = new class_crm();</span>
+<span class="x">        echo json_encode($crm-&gt;actualizarEmail($_POST['idcliente'], $_POST['email']));</span>
+<span class="x">        break;</span>
+<span class="x">}</span>
+</code></pre></div></p>
+<h3 id="32-convenciones">3.2 Convenciones</h3>
+<ul>
+<li>Los <strong>tokens</strong> se documentan en cada módulo.</li>
+<li>Deben ser <strong>únicos por archivo AJAX</strong>.</li>
+<li>Cada token debe tener su <strong>documentación funcional</strong>.</li>
+</ul>
+<h2 id="4-validaciones-en-el-ciclo-de-comunicacion">4. Validaciones en el Ciclo de Comunicación</h2>
+<h3 id="41-en-el-cliente">4.1 En el Cliente</h3>
+<ul>
+<li>Validación de formularios con <strong>HTML5</strong> (<code>required</code>, <code>pattern</code>).</li>
+<li>Validación dinámica con <strong>JavaScript</strong> (<code>onblur</code>, <code>keyup</code>).</li>
+<li>Confirmaciones antes de envío (SweetAlert2, modals).</li>
+</ul>
+<h3 id="42-en-el-servidor">4.2 En el Servidor</h3>
+<ul>
+<li>Verificación de <strong>sesión activa</strong>.</li>
+<li>Validación de <strong>estructura y tipo de datos</strong> (<code>is_numeric</code>, <code>filter_var</code>).</li>
+<li><strong>Sanitización y escape</strong> para proteger contra <strong>XSS</strong> y <strong>SQLi</strong>.</li>
+<li>Verificación de <strong>permisos por usuario/sucursal</strong>.</li>
+</ul>
+<h2 id="5-manejo-de-respuestas">5. Manejo de Respuestas</h2>
+<p>Las respuestas desde PHP pueden ser de dos tipos:</p>
+<ul>
+<li><strong>JSON</strong>: Estructura con <code>status</code>, <code>message</code>, <code>data</code>, usada para actualizar dinámicamente la interfaz.</li>
+<li><strong>HTML</strong>: Fragmentos renderizados que se insertan directamente en el DOM.</li>
+</ul>
+<h3 id="ejemplo-json">Ejemplo JSON</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Correo actualizado correctamente"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"idcliente"</span><span class="p">:</span><span class="w"> </span><span class="mi">1283</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nuevo@cliente.com"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="6-seguridad-en-la-interaccion">6. Seguridad en la Interacción</h2>
+<ul>
+<li>Todos los controladores AJAX inician con <strong>validación de sesión</strong> (<code>$_SESSION</code>).</li>
+<li>Se verifica que el <strong>token sea válido</strong> para el usuario y el módulo correspondiente.</li>
+<li>Se utilizan <strong>funciones de acceso a base de datos con parámetros preparados</strong> (PDO, <code>mysqli_stmt</code>) para evitar <strong>SQL Injection</strong>.</li>
+<li>Se pueden emplear <strong>tokens CSRF adicionales</strong> para acciones críticas.</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({
+    securityLevel: "loose",
+    startOnLoad: true,
+    theme: "default",
+    mermaid_url: "https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js"
+});</script></body>
+</html>

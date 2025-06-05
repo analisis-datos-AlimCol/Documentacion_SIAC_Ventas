@@ -1,6 +1,7 @@
 site_name: SIAC 2.0 Ventas - Documentación Técnica
 theme:
   name: material
+docs_dir: docs
 
 plugins:
   - search
@@ -35,5 +36,4 @@ nav:
   - Manejo de errores: errores.md
   - Optimización y performance: performance.md
   - Mantenimiento: mantenimiento.md
-  - APIs y Servicios: apis.md
-  - Requisitos técnicos: requisitos.md
+  - Referencia Técnica (PHPDoc): phpdoc/index.html

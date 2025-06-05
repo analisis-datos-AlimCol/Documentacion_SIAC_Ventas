@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../modulos/ventas/" rel="prev"/>
+<link href="../asincronicos/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
+<title>Integraciones - SIAC 2.0 Ventas - Documentación Técnica</title>
+<link href="../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#integraciones-del-sistema-siac-20">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="SIAC 2.0 Ventas - Documentación Técnica" class="md-header__button md-logo" data-md-component="logo" href=".." title="SIAC 2.0 Ventas - Documentación Técnica">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            SIAC 2.0 Ventas - Documentación Técnica
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Integraciones
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="SIAC 2.0 Ventas - Documentación Técnica" class="md-nav__button md-logo" data-md-component="logo" href=".." title="SIAC 2.0 Ventas - Documentación Técnica">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    SIAC 2.0 Ventas - Documentación Técnica
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Introducción
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../global/arquitectura/">
+<span class="md-ellipsis">
+    Arquitectura del Sistema
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../global/frontend/">
+<span class="md-ellipsis">
+    Componentes Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../global/estructura_archivos/">
+<span class="md-ellipsis">
+    Estructura de Archivos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../global/interaccion_cliente_servidor/">
+<span class="md-ellipsis">
+    Interacción Cliente-Servidor
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../global/seguridad_validaciones/">
+<span class="md-ellipsis">
+    Seguridad y Validaciones
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../global/base_datos_global/">
+<span class="md-ellipsis">
+    Base de Datos Global
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Fichas Técnicas por Módulo
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Fichas Técnicas por Módulo
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../modulos/caja/">
+<span class="md-ellipsis">
+    Caja
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../modulos/cedis/">
+<span class="md-ellipsis">
+    CEDIS
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../modulos/crm/">
+<span class="md-ellipsis">
+    CRM
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../modulos/facturacion/">
+<span class="md-ellipsis">
+    Facturación Electrónica
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../modulos/liquidacion/">
+<span class="md-ellipsis">
+    Liquidación de Ventas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../modulos/ventas/">
+<span class="md-ellipsis">
+    Ventas
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Integraciones
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Integraciones
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-modulos-principales-del-sistema">
+<span class="md-ellipsis">
+      1. Módulos Principales del Sistema
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-dependencias-entre-modulos">
+<span class="md-ellipsis">
+      2. Dependencias entre Módulos
+    </span>
+</a>
+<nav aria-label="2. Dependencias entre Módulos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-dependencias-funcionales">
+<span class="md-ellipsis">
+      2.1 Dependencias Funcionales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-flujo-de-datos">
+<span class="md-ellipsis">
+      2.2 Flujo de Datos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-dependencias-de-procesos">
+<span class="md-ellipsis">
+      2.3 Dependencias de Procesos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-puntos-de-integracion-criticos">
+<span class="md-ellipsis">
+      2.4 Puntos de Integración Críticos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../asincronicos/">
+<span class="md-ellipsis">
+    Procesos Asincrónicos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../errores/">
+<span class="md-ellipsis">
+    Manejo de errores
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../performance/">
+<span class="md-ellipsis">
+    Optimización y performance
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mantenimiento.md">
+<span class="md-ellipsis">
+    Mantenimiento
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apis.md">
+<span class="md-ellipsis">
+    APIs y Servicios
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../requisitos.md">
+<span class="md-ellipsis">
+    Requisitos técnicos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-modulos-principales-del-sistema">
+<span class="md-ellipsis">
+      1. Módulos Principales del Sistema
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-dependencias-entre-modulos">
+<span class="md-ellipsis">
+      2. Dependencias entre Módulos
+    </span>
+</a>
+<nav aria-label="2. Dependencias entre Módulos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-dependencias-funcionales">
+<span class="md-ellipsis">
+      2.1 Dependencias Funcionales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-flujo-de-datos">
+<span class="md-ellipsis">
+      2.2 Flujo de Datos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-dependencias-de-procesos">
+<span class="md-ellipsis">
+      2.3 Dependencias de Procesos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-puntos-de-integracion-criticos">
+<span class="md-ellipsis">
+      2.4 Puntos de Integración Críticos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="integraciones-del-sistema-siac-20">Integraciones del Sistema SIAC 2.0</h1>
+<p>Este documento describe la las integraciones entre módulos del sistema SIAC 2.0 ventas, una solución empresarial modular desarrollada principalmente en PHP. Está diseñada bajo principios de escalabilidad, separación de responsabilidades y facilidad de mantenimiento.</p>
+<h2 id="1-modulos-principales-del-sistema">1. Módulos Principales del Sistema</h2>
+<p>Los módulos están organizados por dominio. Cada uno se documenta por separado con su funcionalidad, estructura de archivos y base de datos específica.</p>
+<ul>
+<li>
+<p>Caja: manejo de recibos, liquidaciones, cobros.</p>
+</li>
+<li>
+<p>CRM: gestión de clientes, visitas, rutas.</p>
+</li>
+<li>
+<p>CEDIS: control de inventario y distribución.</p>
+</li>
+<li>
+<p>Ventas: pedidos, precios, promociones, facturación.</p>
+</li>
+<li>
+<p>Facturación: generación y timbrado de CFDI.</p>
+</li>
+<li>
+<p>Liquidación: comisiones, validación de órdenes, cierre mensual.</p>
+</li>
+</ul>
+<h2 id="2-dependencias-entre-modulos">2. Dependencias entre Módulos</h2>
+<h3 id="21-dependencias-funcionales">2.1 Dependencias Funcionales</h3>
+<table>
+<thead>
+<tr>
+<th>Módulo Origen</th>
+<th>Módulo Destino</th>
+<th>Dependencia</th>
+<th>Tipo de Dependencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CEDIS</td>
+<td>Ventas</td>
+<td>Stock</td>
+<td>Directa</td>
+<td>El módulo de ventas consulta el stock disponible en CEDIS antes de procesar un pedido.</td>
+</tr>
+<tr>
+<td>CRM</td>
+<td>Ventas</td>
+<td>Clientes</td>
+<td>Directa</td>
+<td>Las ventas dependen de la información de clientes proporcionada por CRM para generar pedidos.</td>
+</tr>
+<tr>
+<td>Ventas</td>
+<td>Facturación</td>
+<td>Pedidos</td>
+<td>Directa</td>
+<td>La facturación requiere información de pedidos de ventas para generar facturas.</td>
+</tr>
+<tr>
+<td>Ventas</td>
+<td>Liquidación</td>
+<td>Comisiones</td>
+<td>Directa</td>
+<td>La liquidación utiliza información de ventas para calcular comisiones.</td>
+</tr>
+<tr>
+<td>Caja</td>
+<td>Liquidación</td>
+<td>Cobros</td>
+<td>Directa</td>
+<td>La liquidación requiere información de cobros de caja para conciliar pagos.</td>
+</tr>
+<tr>
+<td>Reportes</td>
+<td>Todos</td>
+<td>Datos</td>
+<td>Indirecta</td>
+<td>Los reportes dependen de datos de todos los módulos para generar análisis.</td>
+</tr>
+<tr>
+<td>Configuración</td>
+<td>Todos</td>
+<td>Parámetros</td>
+<td>Indirecta</td>
+<td>Todos los módulos dependen de la configuración para obtener parámetros globales.</td>
+</tr>
+<tr>
+<td>CEDIS</td>
+<td>CEDIS</td>
+<td>Stock</td>
+<td>Directa</td>
+<td>Controla el movimiento de productos entre sucursales</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-flujo-de-datos">2.2 Flujo de Datos</h3>
+<ol>
+<li><strong>Flujo CEDIS - Ventas - Facturación</strong></li>
+</ol>
+<div class="mermaid">
+sequenceDiagram
+    participant CEDIS
+    participant Ventas
+    participant Facturación
+    participant Cliente
+    CEDIS-&gt;&gt;Ventas: Stock disponible
+    Ventas-&gt;&gt;Facturación: Pedido
+    Facturación-&gt;&gt;Cliente: CFDI
+    Cliente-&gt;&gt;Facturación: Pago
+    Facturación-&gt;&gt;Caja: Registro de pago
+</div>
+<ol>
+<li><strong>Flujo CRM - Ventas - Liquidación</strong></li>
+</ol>
+<div class="mermaid">
+sequenceDiagram
+    participant CRM
+    participant Ventas
+    participant Liquidación
+    CRM-&gt;&gt;Ventas: Perfil Cliente
+    Ventas-&gt;&gt;Liquidación: Venta Realizada
+    Liquidación-&gt;&gt;Ventas: Comisión Calculada
+</div>
+<ol>
+<li><strong>Flujo de Traslado de Productos</strong></li>
+</ol>
+<div class="mermaid">
+sequenceDiagram
+    participant SucursalA
+    participant Traslados
+    participant CEDIS
+    participant SucursalB
+    participant Facturación
+    participant Caja
+
+    SucursalA-&gt;&gt;Traslados: Solicitud de traslado
+    Traslados-&gt;&gt;CEDIS: Verifica stock en A
+    CEDIS-&gt;&gt;Traslados: Confirma disponibilidad
+    Traslados-&gt;&gt;SucursalB: Notifica recepción esperada
+    SucursalB-&gt;&gt;Traslados: Confirma recepción
+    Traslados-&gt;&gt;CEDIS: Actualiza inventarios
+    CEDIS-&gt;&gt;SucursalA: Actualiza stock A
+    CEDIS-&gt;&gt;SucursalB: Actualiza stock B
+    SucursalB-&gt;&gt;Facturación: Genera CFDI (si aplica)
+    Facturación-&gt;&gt;Caja: Registro de movimientos
+</div>
+<h3 id="23-dependencias-de-procesos">2.3 Dependencias de Procesos</h3>
+<p>Proceso de Venta Completo</p>
+<div class="mermaid">
+graph LR
+    A[CRM - Cliente] --&gt; B[Ventas - Pedido]
+    B --&gt; C[CEDIS - Stock]
+    C --&gt; D[Facturación - CFDI]
+    D --&gt; E[Caja - Cobro]
+    E --&gt; F[Liquidación - Comisión]
+</div>
+<p>Proceso de Facturación</p>
+<div class="mermaid">
+graph LR
+    A[Ventas - Pedido] --&gt; B[Facturación - CFDI]
+    B --&gt; C[Caja - Pago]
+    C --&gt; D[Liquidación - Conciliación]
+</div>
+<p>Proceso de Orden de Traslado</p>
+<div class="mermaid">
+graph LR
+    A[Pedido en Sucursal B] --&gt; B[Verifica Stock en CEDIS]
+    B --&gt; C[Genera Orden de Traslado]
+    C --&gt; D[Notifica Sucursal A]
+    D --&gt; E[Prepara Traslado]
+    E --&gt; F[Confirma Recepción]
+    F --&gt; G[Actualiza Inventario]
+</div>
+<h3 id="24-puntos-de-integracion-criticos">2.4 Puntos de Integración Críticos</h3>
+<ul>
+<li>
+<p>Integración CEDIS-Ventas</p>
+<ul>
+<li>Verificación de stock</li>
+<li>Actualización de inventario</li>
+<li>Notificaciones de stock bajo</li>
+</ul>
+</li>
+<li>
+<p>Integración CRM-Ventas</p>
+<ul>
+<li>Validación de crédito</li>
+<li>Historial de compras</li>
+<li>Segmentación de clientes</li>
+</ul>
+</li>
+<li>Integración Ventas-Facturación<ul>
+<li>Generación de CFDI</li>
+<li>Validación fiscal</li>
+<li>Timbrado</li>
+</ul>
+</li>
+<li>Integración Caja-Liquidación<ul>
+<li>Conciliación de pagos</li>
+<li>Distribución de comisiones</li>
+<li>Reportes financieros</li>
+</ul>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({
+    securityLevel: "loose",
+    startOnLoad: true,
+    theme: "default",
+    mermaid_url: "https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js"
+});</script></body>
+</html>

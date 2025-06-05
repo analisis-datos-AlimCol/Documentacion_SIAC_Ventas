@@ -57,6 +57,16 @@ Este módulo implementa la arquitectura estándar del sistema SIAC 2.0 definida 
 | `crm_widgets.php`| Componentes interactivos.|
 | `crm_select.php`, `crm_select2.php`| Selectores dinámicos.|
 
+**Clases principales**
+
+- [c_View_crm (Vista)](../phpdoc/classc___view__crm.html)
+- [c_Add_crm (Añadir)](../phpdoc/classc___add__crm.html)
+- [c_Up_crm (Actualizar)](../phpdoc/classc___up__crm.html)
+- [c_Rmv_crm (Eliminar)](../phpdoc/classc___rmv__crm.html)
+- [c_Fun_crm (Funciones)](../phpdoc/classc___fun__crm.html)
+- [c_Msj_crm (Mensajes)](../phpdoc/classc___msj__crm.html)
+
+
 ## 4. Funcionalidades Principales
 
 ### 4.1 Gestión de Clientes

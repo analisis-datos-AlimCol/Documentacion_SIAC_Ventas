@@ -59,6 +59,20 @@ Este módulo implementa la arquitectura estándar del sistema SIAC 2.0 definida 
 | `vta_utils.js`       | Funciones utilitarias               |
 
 
+**Clases Principales**
+
+- [c_View_pv (Vista Punto de Venta)](../phpdoc/classc___view__pv.html)
+- [c_Add_pv (Añadir Punto de Venta)](../phpdoc/classc___add__pv.html)
+- [c_Up_pv (Actualizar Punto de Venta)](../phpdoc/classc___up__pv.html)
+- [c_Rmv_pv (Eliminar Punto de Venta)](../phpdoc/classc___rmv__pv.html)
+- [c_Fun_pv (Funciones Punto de Venta)](../phpdoc/classc___funs__pv.html)
+- [c_Msj_pv (Mensajes Punto de Venta)](../phpdoc/classc___msj__pv.html)
+- [c_View_vm (Vista Venta de Mostrador)](../phpdoc/classc___view__vm.html)
+- [c_Add_vm (Añadir Venta de Mostrador)](../phpdoc/classc___add__vm.html)
+- [c_Up_vm (Actualizar Venta de Mostrador)](../phpdoc/classc___up__vm.html)
+- [c_Rmv_vm (Eliminar Venta de Mostrador)](../phpdoc/classc___rmv__vm.html)
+- [c_Fun_vm (Funciones Venta de Mostrador)](../phpdoc/classc___fun__vm.html)
+
 
 
 ---
@@ -81,24 +95,6 @@ Este módulo implementa la arquitectura estándar del sistema SIAC 2.0 definida 
 - `class_vtas.php`, tokens 300–305  
 - `class_factura.php`, tokens 400–405
 
-### 4.2 Sistema de Precios
-
-- Gestión de precios locales
-- Gestión de precios foráneos
-- Precios especiales (globales)
-- Sistema de descuentos por volumen
-- Promociones temporales
-- Validación de precios contra costos
-
-**Referencias:**
-
-- `class_precio.php`
-- `vta_dtos_promos.php`
-- `vta_g_precios.php`
-
-
-
----
 
 ### 4.3 Gestor de Precios
 

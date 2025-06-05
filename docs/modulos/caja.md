@@ -25,6 +25,110 @@ Este módulo implementa la arquitectura estándar del sistema SIAC 2.0 definida 
 
 ## 4. Funcionalidades Principales
 
+
+
+Recibo de ingresos adicionales:
+    Implementado en el flujo de "Recibo de Ingresos"
+    Incluye validación de datos y generación de movimientos
+    Actualiza el estado y notifica automáticamente
+Recibos de liquidación de venta:
+    Maneja liquidaciones de ventas
+    Integra con el módulo de ventas
+    Genera movimientos financieros
+    Actualiza estados y notifica
+Recibos de cobranza:
+    Gestiona cobranzas
+    Integra con el módulo de clientes y crédito
+    Genera movimientos y actualiza estados
+    Incluye notificaciones automáticas
+Recibo de establecimientos:
+    Maneja ingresos de establecimientos
+    Integra con el módulo de sucursales
+    Genera movimientos y actualiza estados
+Corte de caja:
+    Permite realizar cortes de caja
+    Genera reportes financieros
+    Actualiza estados y notifica
+
+generar recibos de liquidacion. 
+
+se selecciona el mes y el agente de venta. luego se selecciona la orden a la cual se le generará su recibo. se agregan movimientos (pagos o tickets) hasta que el importe de la suma de los movimientos sea igual al importe de la orden en liquidacion. una vez agregados todos los movimientos es necesario relacionar los tickets generados con los documentos de venta o remisiones. Hasta que todos los documentos de venta tengan al menos un ticket de pago (movimiento) relacionado.
+
+<div class="mermaid">
+graph TD
+    A[Inicio] --> B[Seleccionar Sucursal]
+    B --> C[Verificar Permisos]
+    C -->|Sí| D[Mostrar Espacio de Trabajo]
+    D --> E{Órdenes Pendientes?}
+    E -->|Sí| F[Seleccionar Orden]
+    F --> G[Validar Productos]
+    G --> H[Validar Documentos]
+    H --> I[Generar Liquidación]
+    I --> J[Actualizar Estado]
+    E -->|No| K[Mostrar Reportes]
+
+   %% Estilos personalizados
+    classDef process fill:#e1f5fe,stroke:#01579b,color:#000;
+    classDef decision fill:#fff3e0,stroke:#e65100,color:#000;
+    classDef startend fill:#c8e6c9,stroke:#2e7d32,color:#000;
+
+    class A startend;
+    class E decision;
+    class B,C,D,F,G,H,I,J,K process;
+</div>
+
+### 4.2 Recibos de Liquidación de Venta
+
+Permite gestionar el proceso de liquidación de ventas a través de ordenes de salida, vinculando múltiples documentos de venta (remisiones) con un solo recibo.
+
+**Características:**
+
+- Gestión de ordenes de salida por vendedor
+- Generación de movimientos (tickets)
+- Validación de importes totales
+- Relacionamiento de tickets con documentos de venta
+- Notificaciones automáticas
+- Gestión de estados y confirmaciones
+
+Referencias técnicas:
+
+- Lógica principal: `cont_ajax.js`
+- Clase principal: `class_vtas.php`, 
+- métodos:
+    - `cont_rmv_liq_av_os_edo_gen_os_x_scrip`
+    - `cont_up_liquidacion_edo_x_ids_scrip`
+    - `cont_gcj_rbo_liquidacion`
+
+
+Vistas: `cont_g_caja.php`, `cont_forms.php`
+**Diagrama**
+<div class="mermaid">
+
+graph TD
+    %% Nodos principales
+    A[Inicio] --> B[Selección de Parámetros]
+
+    B --> E[Generación de Movimientos o Tickets de pago]
+    E --> E1{¿Monto de Movimientos = Monto Orden?}
+    E1 --> |No|E
+    E1 --> |Sí|F[Relación de Documentos y Movimientos]
+    F --> G{¿Cada Documento Tiene Ticket Asociado?}
+    G --> |Sí|H[Validación]
+    G --> |No|F
+    H --> I[Generar Notificación]
+   
+%% Estilos personalizados
+    classDef process fill:#e1f5fe,stroke:#01579b,color:#000;
+    classDef decision fill:#fff3e0,stroke:#e65100,color:#000;
+    classDef startend fill:#c8e6c9,stroke:#2e7d32,color:#000;
+
+    class A startend;
+    class B,E,F,H,I process;
+    class E1,G decision;
+
+
+</div>
+
 ### 4.1 Gestión de Recibos
 
 Permite el control completo de los diferentes tipos de recibos en el sistema de caja.
@@ -154,6 +258,10 @@ Para detalles sobre el patrón de comunicación cliente-servidor utilizado en es
 - **add_cfdi_cpago**: Complementos de pago.
 - **add_cfdi_cpago_info**: Información de CFDI.
 - **add_cfdi_cpago_cancel**: Cancelaciones de CFDI.
+
+Tablas clave:
+
+add_orden_status_liquidacion: Controla estados de ordenes
 
 
 
