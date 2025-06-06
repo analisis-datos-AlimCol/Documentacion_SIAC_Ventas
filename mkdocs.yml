@@ -1,0 +1,39 @@
+site_name: SIAC 2.0 Ventas - Documentación Técnica
+theme:
+  name: material
+docs_dir: docs
+
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        securityLevel: 'loose'
+        startOnLoad: true
+        theme: default
+        mermaid_url: "https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js"
+
+
+markdown_extensions:
+  - pymdownx.superfences
+
+nav:
+  - Introducción: index.md
+  - Arquitectura del Sistema: global/arquitectura.md
+  - Componentes Frontend: global/frontend.md
+  - Estructura de Archivos: global/estructura_archivos.md
+  - Interacción Cliente-Servidor: global/interaccion_cliente_servidor.md
+  - Seguridad y Validaciones: global/seguridad_validaciones.md
+  - Base de Datos Global: global/base_datos_global.md
+  - Fichas Técnicas por Módulo:
+      - Caja: modulos/caja.md
+      - CEDIS: modulos/cedis.md
+      - CRM: modulos/crm.md
+      - Facturación Electrónica: modulos/facturacion.md
+      - Liquidación de Ventas: modulos/liquidacion.md
+      - Ventas: modulos/ventas.md
+  - Integraciones: integraciones.md
+  - Procesos Asincrónicos: asincronicos.md
+  - Manejo de errores: errores.md
+  - Optimización y performance: performance.md
+  - Mantenimiento: mantenimiento.md
+  - Referencia Técnica (PHPDoc): phpdoc/index.html
